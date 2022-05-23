@@ -1,2 +1,2 @@
-export {default as SideMenu} from './MainContent';
-export {default as MainContent} from './SideMenu';
+export {default as SideMenu} from './SideMenu/SideMenu.jsx';
+export {default as MainContent} from './MainContent/MainContent.jsx';

@@ -1,9 +1,10 @@
-import './App.css';
-// import {SideMenu,MainContent} from ''
+import styles from './App.css';
+import {SideMenu,MainContent} from '@/layouts/index'
 function App() {
   return (
-    <div className="App">
-      aaaaa
+    <div className={styles.App}>
+      <SideMenu />
+      <MainContent />
     </div>
   );
 }

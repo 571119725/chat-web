@@ -1,6 +1,10 @@
+import styles from './mainContent.modules.css'
 function MainContent () {
   return (
-    <div>MainContent</div>
+    <div className={styles.main_content}>
+      <div>1</div>
+      <div>2</div>
+    </div>
   )
 };
 

@@ -1,0 +1,15 @@
+.side_menu {
+  height: 100%;
+  width: 80px;
+  background-color: rgb(83, 83, 43);
+}
+@media (min-width: 600px) {
+  .side_menu {
+    display: flex;
+  }
+}
+@media (max-width: 599px) {
+  .side_menu {
+    display: none;
+  }
+}

@@ -1,0 +1,39 @@
+<html>
+  <body>
+    <div class="div1">
+      <div class="div2">
+        <div class="div3"></div>
+      </div>
+    </div>
+  </body>
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .div1 {
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      overflow: overlay;
+    }
+    .div2 {
+      width: 100%;
+      height: 100%;
+      min-width: 800px;
+      min-height: 600px;
+      position: relative;
+    }
+    .div3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 70%;
+      height: 70%;
+      background-color: black;
+    }
+  </style>
+</html>

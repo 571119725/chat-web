@@ -1,14 +1,28 @@
-.App {
-  text-align: center;
-  height: 80%;
-  width: 60%;
-  min-height: 300px;
-  background-color: rgb(69, 53, 129);
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 
+@media (min-width: 600px) {
+  .App {
+    height: 80%;
+    width: 60%;
+    /* min-width: 600px; */
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    background-color: rgb(69, 53, 129);
+  }
+}
+@media (max-width: 599px) {
+  .App {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgb(69, 53, 129);
+  }
+}
