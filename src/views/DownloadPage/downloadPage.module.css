@@ -1,4 +1,7 @@
 .download_page {
   width: 100%;
   height: 100%;
+  background-color: rgb(129, 129, 179);
+  position: absolute !important;
+  top: 0;
 }

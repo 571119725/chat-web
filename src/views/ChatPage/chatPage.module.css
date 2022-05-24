@@ -1,4 +1,7 @@
 .chat_page {
   width: 100%;
   height: 100%;
+  background-color: blue;
+  position: absolute !important;
+  top: 0;
 }
