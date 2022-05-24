@@ -5,7 +5,6 @@ import {Route, Routes, useLocation} from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 function MainContent () {
   const location = useLocation();
-  console.log(styles.fade);
   return (
     <div className={styles.main_content}>
       <TransitionGroup className={styles.router_wrapper}>

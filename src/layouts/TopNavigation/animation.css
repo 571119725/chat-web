@@ -1,0 +1,20 @@
+.show-enter, .show-appear {
+  opacity: 0;
+}
+.show-enter-active, .show-appear{
+  opacity: 1;
+  transition: all 0.7s ease-out;
+}
+.show-enter-done {
+  opacity: 1;
+}
+.show-exit {
+  opacity: 1;
+}
+.show-exit-active {
+  opacity: 0;
+  display: none;
+}
+.show-exit-done {
+  opacity: 0;
+}

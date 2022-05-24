@@ -1,5 +1,5 @@
 import styles from './sideMenu.module.css';
-import iconfont from  '@/components/icon/iconfont.module.css';
+// import iconfont from  '@/components/icon/iconfont.module.css';
 import { NavLink } from "react-router-dom";
 function SideMenu () {
   return (
@@ -18,26 +18,26 @@ function SideMenu () {
             styles.funct_choice + " " + 
             styles.funct_choice_message + ' ' + 
             (isActive ? styles.active_choice:'')}>
-          <div className={iconfont.iconfont}>&#xe89c;</div>
+          <div className='iconfont'>&#xe89c;</div>
         </NavLink>
         <NavLink 
           to='/download'
           title='客户端下载'  
           className={({isActive}) =>  styles.funct_choice + " " + (isActive ? styles.active_choice:'')}>
-          <div className={iconfont.iconfont}>&#xe60e;</div>
+          <div className='iconfont'>&#xe60e;</div>
         </NavLink>
         <NavLink 
           to='/setting'
           title='设置' 
           className={({isActive}) =>  styles.funct_choice + " " + (isActive ? styles.active_choice:'')}>
-          <div className={iconfont.iconfont}>&#xeb8d;</div>
+          <div className='iconfont'>&#xeb8d;</div>
         </NavLink>
       </div>
       <NavLink 
         to='/user_space'
         title='个人空间'
         className={({isActive}) =>  styles.user_icon + " " + (isActive ? styles.active_choice:'')}>
-        <div className={iconfont.iconfont}>&#xe788;</div>
+        <div className='iconfont'>&#xe788;</div>
       </NavLink>
     </div>
   )
