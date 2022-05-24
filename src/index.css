@@ -9,8 +9,51 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: overlay;
+  background-image: url("./assets/background.png");
+  background-attachment: fixed;
+  background-position: 0 0;
+  animation: scrollToRight 20s linear infinite;
 }
+@keyframes scrollToRight {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1870px 0;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@font-face {
+  font-family: 'iconfont';  /* Project id 3424375 */
+  src: url('//at.alicdn.com/t/font_3424375_rczg1ojf29.woff2?t=1653368414714') format('woff2'),
+       url('//at.alicdn.com/t/font_3424375_rczg1ojf29.woff?t=1653368414714') format('woff'),
+       url('//at.alicdn.com/t/font_3424375_rczg1ojf29.ttf?t=1653368414714') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yonghu:before {
+  content: "\e788";
+}
+
+.icon-icon_shezhi:before {
+  content: "\eb8d";
+}
+
+.icon-xiazai:before {
+  content: "\e60e";
+}
+
+.icon-liaotian:before {
+  content: "\e89c";
 }

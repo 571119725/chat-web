@@ -1,10 +1,15 @@
-import styles from './App.css';
-import {SideMenu,MainContent} from '@/layouts/index'
+import styles from './App.module.css';
+import {SideMenu,MainContent} from '@/layouts/index';
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
 function App() {
   return (
     <div className={styles.App}>
-      <SideMenu />
-      <MainContent />
+      <Router>
+        <SideMenu />
+        <MainContent />
+      </Router>
     </div>
   );
 }

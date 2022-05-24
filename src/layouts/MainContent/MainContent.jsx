@@ -1,9 +1,24 @@
-import styles from './mainContent.modules.css'
+import styles from './mainContent.module.css';
+import './animation.css'
+import {ChatPage, DownloadPage, SettingPage} from '@/views/index';
+import {Route, Routes, useLocation} from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 function MainContent () {
+  const location = useLocation();
+  console.log(styles.fade);
   return (
     <div className={styles.main_content}>
-      <div>1</div>
-      <div>2</div>
+      <TransitionGroup className={styles.router_wrapper}>
+        <CSSTransition 
+          timeout={1000} 
+          classNames={'fade'} key={location.pathname} unmountOnExit={true} appear={true}>
+          <Routes>
+            <Route path='/' element={<ChatPage />}/>
+            <Route path='/download' element={<DownloadPage />}/>
+            <Route path='/setting' element={<SettingPage />}/>
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
     </div>
   )
 };

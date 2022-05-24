@@ -1,0 +1,48 @@
+.main_content {
+  background-color: bisque;
+}
+.router_wrapper {
+  width: 100%;
+  height: 100%;
+}
+.fade-enter {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s;
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s;
+}
+.fade-enter-done {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s;
+}
+.fade-exit-active {
+  
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 300ms;
+}
+.fade-exite-done {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 300ms;
+}
+@media (min-width: 600px) {
+  .main_content {
+    width: calc(100% - 80px);
+  }
+}
+@media (max-width: 599px) {
+  .main_content {
+    width: 100%;
+  }
+}
