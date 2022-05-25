@@ -11,7 +11,7 @@ function MainContent () {
         <CSSTransition 
           timeout={1000} 
           classNames={'fade'} key={location.pathname} unmountOnExit={true} appear={true}>
-          <Routes>
+          <Routes location={location}>
             <Route path='/' element={<ChatPage />}/>
             <Route path='/download' element={<DownloadPage />}/>
             <Route path='/setting' element={<SettingPage />}/>
