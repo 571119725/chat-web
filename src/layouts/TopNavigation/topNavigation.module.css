@@ -1,7 +1,14 @@
 .topNavigation {
   width: 100%;
   height: 45px;
-  background-color: rgb(197, 189, 189);
+  background-color: white;
   display: flex;
   align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.abs_position {
+  position: absolute;
+  top: 0;
 }

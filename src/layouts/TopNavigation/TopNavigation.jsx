@@ -2,19 +2,19 @@ import styles from './topNavigation.module.css';
 import './animation.css'
 import {Route, Routes, useLocation} from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import ChatPageTopBar from '@/components/ChatPageTopBar/ChatPageTopBar';
 function TopNavigation () {
   const location = useLocation();
-  const ChatPage = <div>ChatPage</div>;
-  const DownloadPage = <div>DownloadPage</div>;
-  const SettingPage = <div>SettingPage</div>;
+  const DownloadPage = <div className={styles.abs_position}>DownloadPage</div>;
+  const SettingPage = <div className={styles.abs_position}>SettingPage</div>;
   return (
     <div className={styles.topNavigation}>
       <TransitionGroup className={styles.router_wrapper}>
         <CSSTransition 
-          timeout={700} 
+          timeout={1000} 
           classNames={'show'} key={location.pathname} unmountOnExit={true} appear={true}>
-          <Routes>
-            <Route path='/' element={ChatPage}/>
+          <Routes location={location}>
+            <Route path='/' element={<ChatPageTopBar />}/>
             <Route path='/download' element={DownloadPage}/>
             <Route path='/setting' element={SettingPage}/>
           </Routes>

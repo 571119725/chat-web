@@ -1,20 +1,22 @@
 .show-enter, .show-appear {
   opacity: 0;
+  transform: translateX(100%);
 }
-.show-enter-active, .show-appear{
+
+.show-enter-active, .show-appear-active {
   opacity: 1;
-  transition: all 0.7s ease-out;
+  transform: translateX(0);
+  transition: all 1s;
 }
-.show-enter-done {
-  opacity: 1;
-}
+
 .show-exit {
   opacity: 1;
+  transform: translateX(0);
+  transition: all 1s;
 }
+
 .show-exit-active {
   opacity: 0;
-  display: none;
-}
-.show-exit-done {
-  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s;
 }

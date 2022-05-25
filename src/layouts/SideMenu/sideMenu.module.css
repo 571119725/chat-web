@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  z-index: 1;
 }
 .web_logo,.funct_box, .funct_choice, .user_icon {
   width: 100%;
