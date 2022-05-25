@@ -3,7 +3,7 @@ import './animation.css'
 import {Route, Routes, useLocation} from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ChatPageTopBar from '@/components/ChatPageTopBar/ChatPageTopBar';
-function TopNavigation () {
+function TopNavigation (props) {
   const location = useLocation();
   const DownloadPage = <div className={styles.abs_position}>DownloadPage</div>;
   const SettingPage = <div className={styles.abs_position}>SettingPage</div>;
@@ -14,7 +14,7 @@ function TopNavigation () {
           timeout={1000} 
           classNames={'show'} key={location.pathname} unmountOnExit={true} appear={true}>
           <Routes location={location}>
-            <Route path='/' element={<ChatPageTopBar />}/>
+            <Route path='/' element={<ChatPageTopBar onShowDrawer={props.onShowDrawer}/>}/>
             <Route path='/download' element={DownloadPage}/>
             <Route path='/setting' element={SettingPage}/>
           </Routes>

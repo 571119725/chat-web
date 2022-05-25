@@ -1,0 +1,54 @@
+.show_drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: mask_show 0.5s ease-in;
+  background-color: rgb(0, 0, 0,0.5);
+}
+.hide_drawer {
+  display: none;
+}
+.drawer_in {
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  animation: drawer_slide_in 0.5s ease-in;
+}
+.drawer_out {
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  top: 0;
+  left: -80px;
+  background-color: white;
+  animation: drawer_slide_out 0.5s ease-in;
+}
+@keyframes drawer_slide_in{
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes drawer_slide_out{
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes mask_show {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgb(0, 0, 0,0.5);
+  }
+}

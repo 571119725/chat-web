@@ -1,10 +1,10 @@
 import styles from './chatPageTopBar.module.css';
 import ShowDrawerButton from '../ShowDrawerButton/ShowDrawerButton';
-function ChatPageTopBar () {
+function ChatPageTopBar (props) {
     return (
         <div className={styles.chat_page_top_bar}>
             <div className={styles.chat_info}>
-                <ShowDrawerButton />
+                <ShowDrawerButton onShowDrawer={props.onShowDrawer}/>
                 <div className={styles.head_portrait}></div>
                 <div className={styles.name_and_signature}>
                     <div className={styles.name}>数字人组</div>

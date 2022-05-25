@@ -1,14 +1,8 @@
 import styles from './showDrawerButton.module.css';
-function ShowDrawerButton () {
-  let showMask = false;
-  const onChangeMaskShow = () => {
-    showMask = !showMask;
-    console.log(showMask);
-  };
+function ShowDrawerButton (props) {
   return (
     <div className={styles.show_drawer_button}>
-      <div className='iconfont' onClick={onChangeMaskShow}>&#xe6a1;</div>
-      <div className={(showMask ? styles.mask_show:'')}></div>
+      <div className='iconfont' onClick={props.onShowDrawer}>&#xe6a1;</div>
     </div>
   )
 };
