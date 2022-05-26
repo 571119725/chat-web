@@ -1,19 +1,24 @@
 import styles from './chatPage.module.css';
-import React,{useState, useRef} from 'react';
+import React,{useState} from 'react';
 import InputArea from '@/components/InputArea/InputArea';
 import ChatWindow from '@/components/ChatWindow/ChatWindow';
+import moment from 'moment';
 function ChatPage () {
-  const [converInfor,setConverInfor] = useState([]);
-  const childRef = useRef();
+  const [dialogInfor,setDialogInfor] = useState([]);
+  const childRef = React.createRef();
   const showContentInfor = (infor) => {
-    let conversation = converInfor;
-    conversation.push(infor);
-    setConverInfor(conversation);
-    childRef.current.showConversation(converInfor);
+    let convers = [...dialogInfor];
+    const temp = {
+      questionInfor: infor,
+      time: moment().format('HH:mm:ss')
+    }
+    convers.push(temp);
+    setDialogInfor(convers);
+    childRef.current.scrollToBottom();
   }
   return (
     <div className={styles.chat_page}>
-      <ChatWindow cRef={childRef}/>
+      <ChatWindow converInfor={dialogInfor} onRef={childRef}/>
       <InputArea getInputContentInfor={showContentInfor}/>
     </div>
   )

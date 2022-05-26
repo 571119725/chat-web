@@ -12,7 +12,10 @@ function TopNavigation (props) {
       <TransitionGroup className={styles.router_wrapper}>
         <CSSTransition 
           timeout={1000} 
-          classNames={'show'} key={location.pathname} unmountOnExit={true} appear={true}>
+          classNames={'show'} 
+          key={location.pathname} 
+          unmountOnExit={true} 
+          appear={true}>
           <Routes location={location}>
             <Route path='/' element={<ChatPageTopBar onShowDrawer={props.onShowDrawer}/>}/>
             <Route path='/download' element={DownloadPage}/>

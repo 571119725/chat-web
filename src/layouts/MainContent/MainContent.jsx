@@ -10,7 +10,10 @@ function MainContent () {
       <TransitionGroup className={styles.router_wrapper}>
         <CSSTransition 
           timeout={1000} 
-          classNames={'fade'} key={location.pathname} unmountOnExit={true} appear={true}>
+          classNames={'fade'} 
+          key={location.pathname} 
+          unmountOnExit={true} 
+          appear={true}>
           <Routes location={location}>
             <Route path='/' element={<ChatPage />}/>
             <Route path='/download' element={<DownloadPage />}/>

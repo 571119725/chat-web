@@ -1,5 +1,5 @@
 import styles from './responseDialog.module.css';
-function ResponseDialog () {
+function ResponseDialog (props) {
   return (
     <div className={styles.response_dialog}>
       <div className={styles.response_box}>
@@ -11,10 +11,10 @@ function ResponseDialog () {
         </div>
         <div className={styles.response_infor_body}>
           <div className={styles.response_portrait}></div>
-          <div className={styles.response_infor_content}>1111ssssssssssssssssssssssssssssssssssssssssssssssssssssss1111</div>
+          <div className={styles.response_infor_content}>{props.responseInfor}</div>
         </div>
       </div>
-      <div className={styles.response_infor_time}>10:43</div>
+      <div className={styles.response_infor_time}>{props.time}</div>
     </div>
   )
 };

@@ -1,0 +1,22 @@
+.appear-enter, .appear-appear {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.appear-enter-active, .appear-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s;
+}
+
+.appear-exit {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s;
+}
+
+.appear-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.7s;
+}
