@@ -26,8 +26,9 @@
     height: 40%;
 }
 .personal_signature {
-    font-size: 10px;
+    font-size: 8px;
     height: 40%;
+    color: rgb(102, 81, 81);
 }
 .chat_funct_choose {
     margin-right: 10px;

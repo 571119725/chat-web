@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  align-items: flex-end;
   margin: 10px 0 10px 0;
 }
 .response_infor_title {
@@ -12,9 +13,14 @@
 .response_operation {
   transform: rotate(90deg);
 }
+.response_infor_name {
+  font-size: 10px;
+  color: rgb(90, 99, 99);
+}
 .response_infor_time {
   font-size: 10px;
   color: rgb(90, 99, 99);
+  margin-left: 5px;
 }
 .response_infor_body {
   display: flex;
@@ -36,4 +42,5 @@
   margin: 4px 11px 4px 11px;
   border-radius: 50%;
   background-color: rgb(68, 211, 16);
+  flex-shrink: 0;
 }

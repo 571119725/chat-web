@@ -4,7 +4,7 @@ function ResponseDialog () {
     <div className={styles.response_dialog}>
       <div className={styles.response_box}>
         <div className={styles.response_infor_title}>
-          <div className={styles.response_infor_time}>10:43</div>
+          <div className={styles.response_infor_name}>数字人组</div>
           <div className={styles.response_operation}>
             <div className='iconfont'>&#xe611;</div>
           </div>
@@ -14,6 +14,7 @@ function ResponseDialog () {
           <div className={styles.response_infor_content}>1111ssssssssssssssssssssssssssssssssssssssssssssssssssssss1111</div>
         </div>
       </div>
+      <div className={styles.response_infor_time}>10:43</div>
     </div>
   )
 };
