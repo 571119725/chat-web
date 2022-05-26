@@ -1,9 +1,10 @@
 import styles from './chatPage.module.css';
 import InputArea from '@/components/InputArea/InputArea';
+import ChatWindow from '@/components/ChatWindow/ChatWindow';
 function ChatPage () {
   return (
     <div className={styles.chat_page}>
-      <div className={styles.chat_window}></div>
+      <ChatWindow />
       <InputArea />
     </div>
   )
