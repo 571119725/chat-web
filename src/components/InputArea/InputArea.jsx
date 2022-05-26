@@ -1,15 +1,15 @@
 import styles from './inputArea.module.css';
 import { createFromIconfontCN } from '@ant-design/icons';
 import React,{useState} from 'react';
-function InputArea () {
+function InputArea (props) {
+  const [inputContent, setInputContent] = useState('');
+  const sendMessage = () => {
+    props.getInputContentInfor(inputContent);
+    setInputContent('');
+  };
   const MyIcon = createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_3424375_g0bod7x3bw5.js', // 在 iconfont.cn 上生成
   });
-  const [inputContent, setInputContent] = useState('');
-  const sendMessage = () => {
-    setInputContent('');
-    console.log(inputContent);
-  }
   return (
     <div className={styles.chat_funct_bar}>
       <div className={styles.chat_funct_choose}>
@@ -32,7 +32,7 @@ function InputArea () {
             setInputContent(e.target.value);
           }}
           onKeyUp={(e) => {
-            if(e.code === 'Enter') {
+            if(e.keyCode === 13) {
               sendMessage();
             };
           }}/>
