@@ -1,0 +1,50 @@
+.log_in {
+  width: 400px;
+  min-height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  overflow: hidden;
+	box-shadow: 0px 20px 21px 10px #4a4b45;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2px;
+  /* animation: slide_into 1s ease-in; */
+}
+.log_in_title {
+  font-size: 45px;
+  color: black;
+  font-weight: bolder;
+}
+.username_input input{
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 3px rgb(164, 153, 173) solid;
+}
+.username_input input::placeholder {
+  color: #4a4b45;
+}
+.log_in_button {
+  animation: slide_over 1s infinite alternate ease-out;
+  cursor: pointer;
+}
+@keyframes slide_over {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}

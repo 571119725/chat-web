@@ -1,22 +1,17 @@
-import styles from './App.module.css';
-import {SideMenu,MainContent} from '@/layouts/index';
-import {BrowserRouter as Router} from 'react-router-dom';
-import TopNavigation from '@/layouts/TopNavigation/TopNavigation.jsx';
-import Drawer from './components/Drawer/Drawer';
-import { useState } from 'react';
+import {Route, Routes,BrowserRouter as Router, Navigate} from 'react-router-dom';
+import RouterBeforeEach from '@/components/RouterBeforeEach/RouterBeforeEach';
+import MainPage from '@/views/MainPage/MainPage';
+import LogIn from '@/views/LogIn/LogIn';
 function App() {
-  const [showDrawer,setShowDrawer] = useState(false);
   return (
-    <div className={styles.App}>
-      <Router>
-        <SideMenu />
-        <div className={styles.content_box}> 
-          <TopNavigation onShowDrawer={() => setShowDrawer(!showDrawer)}/>
-          <MainContent />
-        </div>
-        <Drawer showDrawer={showDrawer} onHideDrawer={() => setShowDrawer(!showDrawer)}/>
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/mainPage" />} />
+        <Route path='/mainPage/*' element={<MainPage />}/>
+        <Route path='/login' element={<LogIn />}/>
+      </Routes>
+      <RouterBeforeEach />
+    </Router>
   );
 }
 

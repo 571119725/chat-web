@@ -1,6 +1,6 @@
 .chat_window {
   width: 100%;
-  height: 90%;
+  height: calc(100% - 52px);
   overflow: overlay;
   display: flex;
   flex-direction: column;

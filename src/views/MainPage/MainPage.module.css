@@ -1,0 +1,36 @@
+.main_page {
+  min-height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  overflow: hidden;
+	box-shadow: 0px 20px 21px 10px #4a4b45;
+  display: flex;
+}
+@media (min-width: 600px) {
+  .main_page {
+    height: 80%;
+    width: 60%;
+    min-width: 600px;
+    border-radius: 10px;
+  }
+  .content_box {
+    width: calc(100% - 80px);
+    height: 100%;
+  }
+}
+@media (max-width: 599px) {
+  .main_page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0;
+  }
+  .content_box {
+    width: 100%;
+    height: 100%;
+    min-width: 300px;
+  }
+}

@@ -1,22 +1,22 @@
-.appear-enter, .appear-appear {
+.appearLTR-enter, .appear-appear {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateX(-50%);
 }
 
-.appear-enter-active, .appear-appear-active {
+.appearLTR-enter-active, .appear-appear-active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
   transition: all 0.7s;
 }
 
-.appear-exit {
+.appearLTR-exit {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
   transition: all 0.7s;
 }
 
-.appear-exit-active {
+.appearLTR-exit-active {
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateX(50%);
   transition: all 0.7s;
 }

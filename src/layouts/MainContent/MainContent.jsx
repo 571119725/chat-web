@@ -15,9 +15,9 @@ function MainContent () {
           unmountOnExit={true} 
           appear={true}>
           <Routes location={location}>
-            <Route path='/' element={<ChatPage />}/>
-            <Route path='/download' element={<DownloadPage />}/>
-            <Route path='/setting' element={<SettingPage />}/>
+            <Route path='chatPage' element={<ChatPage />}/>
+            <Route path='download' element={<DownloadPage />}/>
+            <Route path='setting' element={<SettingPage />}/>
           </Routes>
         </CSSTransition>
       </TransitionGroup>
