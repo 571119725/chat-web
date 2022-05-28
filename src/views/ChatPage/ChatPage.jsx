@@ -21,12 +21,8 @@ function ChatPage () {
     },[dialogInfor,childRef]
   );
   const showContentInfor = (infor) => {
-    console.log(dialogInfor, infor)
-    // console.log(dialogInfor);
-    let convers = [...dialogInfor];
-    convers.push(infor);
-    console.log(convers);
-    setDialogInfor(convers);
+    dialogInfor.push(infor);
+    setDialogInfor([...dialogInfor]);
   };
   return (
     <div className={styles.chat_page}>

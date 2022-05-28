@@ -2,6 +2,7 @@
   width: 100%;
   height: calc(100% - 52px);
   overflow: overlay;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }

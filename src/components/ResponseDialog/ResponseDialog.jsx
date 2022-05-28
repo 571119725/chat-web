@@ -14,7 +14,7 @@ function ResponseDialog (props) {
           <div className={styles.response_infor_content}>{props.content}</div>
         </div>
       </div>
-      <div className={styles.response_infor_time}>{props.reply_time}</div>
+      <div className={styles.response_infor_time}>{props.time}</div>
     </div>
   )
 };

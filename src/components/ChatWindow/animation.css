@@ -20,3 +20,26 @@
   transform: translateX(50%);
   transition: all 0.7s;
 }
+
+.appearRTL-enter {
+  opacity: 0;
+  transform: translateX(30%);
+}
+
+.appearRTL-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.7s;
+}
+
+.appearRTL-exit {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.7s;
+}
+
+.appearRTL-exit-active {
+  opacity: 0;
+  transform: translateX(30%);
+  transition: all 0.7s;
+}

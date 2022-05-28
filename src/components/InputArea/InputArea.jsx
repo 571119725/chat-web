@@ -17,6 +17,9 @@ function InputArea (props) {
     setInputContent('');
     sendMessage(temp).then(
       res => {
+        let infor = res;
+        infor.reply_time = infor.reply_time.slice(11,16);
+        console.log(infor);
         props.getInputContentInfor(res);
       }
     )

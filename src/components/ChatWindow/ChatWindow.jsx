@@ -36,11 +36,11 @@ function ChatWindow (props) {
       temp = 
         <CSSTransition 
           timeout={700} 
-          classNames={'appearLTR'} 
+          classNames={'appearRTL'} 
           unmountOnExit={true} 
           appear={true}
           key={id}>
-          <ResponseDialog content={element.content} time={element.time}/>
+          <ResponseDialog content={element.content} time={element.reply_time}/>
         </CSSTransition>;
     }
     return (
