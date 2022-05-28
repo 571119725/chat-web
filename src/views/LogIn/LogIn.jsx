@@ -12,7 +12,6 @@ function LogIn () {
       setWarnning('User name cannot be empty!');
       setTimeout(setWarnning,5000,'');
     }else {
-      console.log(userName);
       const infor = {
         username: userName
       };

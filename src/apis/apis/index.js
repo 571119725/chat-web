@@ -1,9 +1,9 @@
 import axios from '../request';
-export function getHistory (userid) {
+export function getHistory (infor) {
   return axios({
       method: 'get',
       url: '/msg/history_msg',
-      params: userid
+      params: infor
     }
   )
 };
@@ -14,4 +14,11 @@ export function createUser (infor) {
     data: infor
     }
   )
-}
+};
+export function sendMessage (infor) {
+  return axios({
+    method: 'post',
+    url: '/msg/send_msg_demo1',
+    params: infor
+  })
+};

@@ -1,11 +1,25 @@
 import styles from './inputArea.module.css';
 import { createFromIconfontCN } from '@ant-design/icons';
 import React,{useState} from 'react';
+import { sendMessage } from '@/apis/apis';
+import moment from 'moment';
 function InputArea (props) {
   const [inputContent, setInputContent] = useState('');
-  const sendMessage = () => {
-    props.getInputContentInfor(inputContent);
+  const pushMessage = () => {
+    const temp = {
+      content: inputContent,
+      fromUserId: sessionStorage.getItem('userId'),
+      toUserId: 1,
+      time: moment().format('HH:mm'),
+      selfuser: true
+    };
+    props.getInputContentInfor(temp);
     setInputContent('');
+    sendMessage(temp).then(
+      res => {
+        props.getInputContentInfor(res);
+      }
+    )
   };
   const MyIcon = createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_3424375_g0bod7x3bw5.js', // 在 iconfont.cn 上生成
@@ -33,11 +47,11 @@ function InputArea (props) {
           }}
           onKeyUp={(e) => {
             if(e.keyCode === 13) {
-              sendMessage();
+              pushMessage();
             };
           }}/>
       </div>
-      <div className={styles.send_message} onClick={sendMessage}>
+      <div className={styles.send_message} onClick={pushMessage}>
         <MyIcon type="icon-fasong" className={styles.icons}/>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import styles from './chatPage.module.css';
-import moment from 'moment';
 import React,{useEffect, useState} from 'react';
 import InputArea from '@/components/InputArea/InputArea';
 import ChatWindow from '@/components/ChatWindow/ChatWindow';
@@ -9,26 +8,24 @@ function ChatPage () {
   const childRef = React.createRef();
   useEffect(
     () => {
+      // console.log(dialogInfor);
       const infor = {
         userid: sessionStorage.getItem('userId')
       };
       getHistory(infor).then(
         res => {
-          console.log(res);
+          // console.log(res);
         }
       )
       childRef.current.scrollToBottom();
     },[dialogInfor,childRef]
   );
   const showContentInfor = (infor) => {
+    console.log(dialogInfor, infor)
+    // console.log(dialogInfor);
     let convers = [...dialogInfor];
-    const temp = {
-      content: infor,
-      fromUserId: sessionStorage.getItem('userId'),
-      toUserId: 1,
-      time: moment().format('HH:mm')
-    };
-    convers.push(temp);
+    convers.push(infor);
+    console.log(convers);
     setDialogInfor(convers);
   };
   return (
