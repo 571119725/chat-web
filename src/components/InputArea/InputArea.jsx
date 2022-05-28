@@ -7,19 +7,19 @@ function InputArea (props) {
   const [inputContent, setInputContent] = useState('');
   const pushMessage = () => {
     const temp = {
-      content: inputContent,
+      content: inputContent.replace(/[\r\n]/g, ''),
       fromUserId: sessionStorage.getItem('userId'),
       toUserId: 1,
       time: moment().format('HH:mm'),
       selfuser: true
     };
+    console.log(temp);
     props.getInputContentInfor(temp);
     setInputContent('');
     sendMessage(temp).then(
       res => {
         let infor = res;
         infor.reply_time = infor.reply_time.slice(11,16);
-        console.log(infor);
         props.getInputContentInfor(res);
       }
     )

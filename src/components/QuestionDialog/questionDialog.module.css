@@ -33,8 +33,7 @@
   max-width: 280px;
   border-radius: 3px;
   padding: 8px;
-  word-wrap:break-word; 
-  word-break:break-all; 
+  word-wrap:break-word ; 
 }
 .question_portrait {
   width: 34px;

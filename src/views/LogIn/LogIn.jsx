@@ -13,7 +13,7 @@ function LogIn () {
       setTimeout(setWarnning,5000,'');
     }else {
       const infor = {
-        username: userName
+        username: userName.replace(/[\r\n]/g, '')
       };
       createUser(infor).then(
         res => {

@@ -38,7 +38,7 @@
   border: 0;
   padding: 0;
   resize: none;
-  word-break: break-all;
+  word-wrap:break-word;
   text-indent: 2px;
   font-size: 15px;
   border-radius: 3px;

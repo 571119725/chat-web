@@ -12,6 +12,7 @@
 }
 .response_operation {
   transform: rotate(90deg);
+  position: relative;
 }
 .response_infor_name {
   font-size: 10px;
@@ -34,7 +35,6 @@
   border-radius: 3px;
   padding: 8px;
   word-wrap:break-word; 
-  word-break:break-all; 
 }
 .response_portrait {
   width: 34px;

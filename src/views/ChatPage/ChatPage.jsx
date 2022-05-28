@@ -8,13 +8,12 @@ function ChatPage () {
   const childRef = React.createRef();
   useEffect(
     () => {
-      // console.log(dialogInfor);
       const infor = {
         userid: sessionStorage.getItem('userId')
       };
       getHistory(infor).then(
         res => {
-          // console.log(res);
+          console.log(res);
         }
       )
       childRef.current.scrollToBottom();
