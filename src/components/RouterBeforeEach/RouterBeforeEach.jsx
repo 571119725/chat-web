@@ -5,10 +5,9 @@ const RouterBeforeEach = ()=>{
   const navigate = useNavigate();
   useEffect(()=>{
     if(sessionStorage.getItem('userId') === null){
-      console.log(location);
       navigate('/login');
     }
-  },[location.pathname]);
+  },[location.pathname,navigate]);
 } 
  
 export default RouterBeforeEach

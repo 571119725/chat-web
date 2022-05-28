@@ -8,10 +8,10 @@ function QuestionDialog (props) {
           <div className={styles.question_operation}>
             <div className='iconfont'>&#xe611;</div>
           </div>
-          <div className={styles.question_infor_name}>我</div>
+          <div className={styles.question_infor_name}></div>
         </div>
         <div className={styles.question_infor_body}>
-          <div className={styles.question_infor_content}>{props.questionInfor}</div>
+          <div className={styles.question_infor_content}>{props.content}</div>
           <div className={styles.question_portrait}></div>
         </div>
       </div>

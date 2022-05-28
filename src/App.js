@@ -6,9 +6,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/mainPage" />} />
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path='/mainPage/*' element={<MainPage />}/>
-        <Route path='/login' element={<LogIn />}/>
+        <Route path='/login' exact element={<LogIn />}/>
       </Routes>
       <RouterBeforeEach />
     </Router>

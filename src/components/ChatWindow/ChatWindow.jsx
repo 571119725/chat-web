@@ -3,15 +3,11 @@ import './animation.css';
 import React, { useImperativeHandle, useRef } from 'react';
 import QuestionDialog from '@/components/QuestionDialog/QuestionDialog';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { getHistory } from '@/apis/apis';
+import DateColumn from '@/components/DateColumn/DateColumn';
+import CheckHistoryDialog from '@/components/CheckHistoryDialog/checkHistoryDialog';
 // import ResponseDialog from '@/components/ResponseDialog/ResponseDialog';
 function ChatWindow (props) {
   useImperativeHandle(props.onRef, () => {
-    getHistory().then(
-      res => {
-        console.log(res);
-      }
-    )
     return {
       scrollToBottom: scrollToBottom,
     };
@@ -20,7 +16,7 @@ function ChatWindow (props) {
   const scrollToBottom = () => {
     messageEndRef.current.scrollTo({
       top: messageEndRef.current.scrollHeight,
-      left: 100,
+      left: 0,
       behavior: 'smooth'
     });
   }
@@ -32,15 +28,17 @@ function ChatWindow (props) {
       unmountOnExit={true} 
       appear={true}
       key={id}>
-        <QuestionDialog questionInfor={element.questionInfor} time={element.time}/>
+        <QuestionDialog content={element.content} time={element.time}/>
       </CSSTransition>
     )
   });
   return (
     <div className={styles.chat_window}  ref={messageEndRef}>
+      {/* <CheckHistoryDialog /> */}
       <TransitionGroup className={styles.router_wrapper}>
         {Dialogs}
       </TransitionGroup>
+      {/* <DateColumn date='2020-10-13'/> */}
     </div>
   )
 }

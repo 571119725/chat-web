@@ -1,11 +1,17 @@
 import axios from '../request';
-export function getHistory () {
-  const userid = 'putaopi';
-  return axios(
-    {
+export function getHistory (userid) {
+  return axios({
       method: 'get',
-      url: '/api/v0/msg/history_msg',
+      url: '/msg/history_msg',
       params: userid
     }
   )
-} 
+};
+export function createUser (infor) {
+  return axios({
+    method: 'post',
+    url: '/user/create_user_demo1',
+    data: infor
+    }
+  )
+}
