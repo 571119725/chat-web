@@ -1,6 +1,7 @@
 import styles from './responseDialog.module.css';
 import LevelChoose from '@/components/LevelChoose/LevelChoose';
 import { useState } from 'react';
+import Mask from '@/components/Mask/Mask';
 function ResponseDialog (props) {
   const [displayLevel, setDisplayLevel] = useState(false);
   const chooseLevel = (level) => {
@@ -8,6 +9,7 @@ function ResponseDialog (props) {
   };
   return (
     <div className={styles.response_dialog}>
+      <Mask display={displayLevel} clickMask={() => setDisplayLevel(!displayLevel)}/>
       <div className={styles.response_box}>
         <div className={styles.response_infor_title}>
           <div className={styles.response_infor_name}></div>
@@ -22,7 +24,7 @@ function ResponseDialog (props) {
           </div>
         </div>
         <div className={styles.response_infor_body}>
-          <div className={styles.response_portrait}></div>
+          <div className={styles.response_portrait}><img src={[require('@/assets/2.jpg')]} alt='response_protrait'/></div>
           <div className={styles.response_infor_content}>{props.content}</div>
         </div>
       </div>

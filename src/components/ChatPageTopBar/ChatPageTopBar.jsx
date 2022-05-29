@@ -5,7 +5,9 @@ function ChatPageTopBar (props) {
         <div className={styles.chat_page_top_bar}>
             <div className={styles.chat_info}>
                 <ShowDrawerButton onShowDrawer={props.onShowDrawer}/>
-                <div className={styles.head_portrait}></div>
+                <div className={styles.head_portrait}>
+                    <img src={[require('@/assets/2.jpg')]} alt='response_protrait'/>
+                </div>
                 <div className={styles.name_and_signature}>
                     <div className={styles.name}>数字人组</div>
                     <div className={styles.personal_signature}>旨在制作一款聊天机器人</div>

@@ -45,3 +45,8 @@
   background-color: rgb(68, 211, 16);
   flex-shrink: 0;
 }
+.response_portrait img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}

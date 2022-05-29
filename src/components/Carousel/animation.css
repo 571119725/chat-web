@@ -1,0 +1,22 @@
+.change-enter {
+  opacity: 0;
+  transform: translateX(10%);
+}
+
+.change-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s;
+}
+
+.change-exit {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s;
+}
+
+.change-exit-active {
+  opacity: 0;
+  transform: translateX(-10%);
+  transition: all 1s;
+}

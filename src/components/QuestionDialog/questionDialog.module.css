@@ -43,3 +43,8 @@
   background-color: rgb(16, 211, 211);
   flex-shrink: 0;
 }
+.question_portrait img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}

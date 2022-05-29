@@ -35,10 +35,7 @@ function ChatPage () {
       msgid: id,
       evaluate: level
     };
-    console.log(infor);
-    evaluateMessage(infor).then(
-      res => console.log(res)
-    )
+    evaluateMessage(infor);
   }
   return (
     <div className={styles.chat_page}>

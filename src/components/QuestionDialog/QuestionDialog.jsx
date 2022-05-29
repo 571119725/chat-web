@@ -12,7 +12,7 @@ function QuestionDialog (props) {
         </div>
         <div className={styles.question_infor_body}>
           <div className={styles.question_infor_content}>{props.content}</div>
-          <div className={styles.question_portrait}></div>
+          <div className={styles.question_portrait}><img src={[require('@/assets/1.jpg')]} alt='quest_protrait'/></div>
         </div>
       </div>
     </div>
