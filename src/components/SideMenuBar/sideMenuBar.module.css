@@ -1,5 +1,5 @@
 .side_menu_bar {
-  background-color: #37307e;
+  background-color: rgb(55, 48, 126, 0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;

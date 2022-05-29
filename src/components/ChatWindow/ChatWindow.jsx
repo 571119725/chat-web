@@ -40,7 +40,12 @@ function ChatWindow (props) {
           unmountOnExit={true} 
           appear={true}
           key={id}>
-          <ResponseDialog content={element.content} time={element.reply_time}/>
+          <ResponseDialog 
+            id={element.msgid}
+            content={element.content} 
+            time={element.reply_time}
+            evaluation={element.evaluation}
+            onChooseLevel={props.onChooseLevel}/>
         </CSSTransition>;
     }
     return (

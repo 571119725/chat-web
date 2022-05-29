@@ -22,3 +22,10 @@ export function sendMessage (infor) {
     params: infor
   })
 };
+export function evaluateMessage (infor) {
+  return axios({
+    method: 'post',
+    url: '/msgs/evaluate',
+    data: infor
+  })
+};

@@ -13,7 +13,6 @@ function InputArea (props) {
       time: moment().format('HH:mm'),
       selfuser: true
     };
-    console.log(temp);
     props.getInputContentInfor(temp);
     setInputContent('');
     sendMessage(temp).then(

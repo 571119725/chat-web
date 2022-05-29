@@ -13,6 +13,7 @@
 .response_operation {
   transform: rotate(90deg);
   position: relative;
+  cursor: pointer;
 }
 .response_infor_name {
   font-size: 10px;

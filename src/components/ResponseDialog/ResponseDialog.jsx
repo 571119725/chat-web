@@ -1,14 +1,24 @@
 import styles from './responseDialog.module.css';
 import LevelChoose from '@/components/LevelChoose/LevelChoose';
+import { useState } from 'react';
 function ResponseDialog (props) {
+  const [displayLevel, setDisplayLevel] = useState(false);
+  const chooseLevel = (level) => {
+    props.onChooseLevel(props.id, level);
+  };
   return (
     <div className={styles.response_dialog}>
       <div className={styles.response_box}>
         <div className={styles.response_infor_title}>
-          <div className={styles.response_infor_name}>数字人组</div>
+          <div className={styles.response_infor_name}></div>
           <div className={styles.response_operation}>
-            <div className='iconfont'>&#xe611;</div>
-            <LevelChoose />
+            <div className='iconfont'
+              onClick={() => setDisplayLevel(!displayLevel)}>&#xe611;</div>
+            <LevelChoose 
+              display={displayLevel}
+              evaluation={props.evaluation} 
+              onChooseLevel={chooseLevel}
+              />
           </div>
         </div>
         <div className={styles.response_infor_body}>
