@@ -1,3 +1,93 @@
+.logo_and_name {
+  display: flex;
+  align-items: flex-end;
+}
+.logo {
+  margin-left: 20px;
+}
+.logo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+.name {
+  margin-left: 10px;
+}
+.name span {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+.description ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.description li {
+  color: white;
+  font-size: 18px;
+}
+.download_button_container {
+  display: flex;
+  justify-content: center;
+}
+.download_button {
+  position: relative;
+  margin: 20px auto;
+  width: 120px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid gold;
+  border-radius: 10px;
+  background: gold;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.download_button:hover {
+  filter: contrast(1.1);
+}
+
+.download_button:active {
+  filter: contrast(0.9);
+}
+
+.download_button::before,
+.download_button::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid gold;
+  transition: all .5s;
+  animation: clippath 6s infinite linear;
+  border-radius: 10px;
+}
+
+.download_button::after {
+  animation: clippath 6s infinite -3s linear;
+}
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 98% 0);
+    }
+    
+    25% {
+        clip-path: inset(0 98% 0 0);
+    }
+    50% {
+        clip-path: inset(98% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 98%);
+    }
+}
 @media (min-width: 600px) {
   .download_page {
     width: 100%;
@@ -14,6 +104,12 @@
   .intro_and_download {
     width: 60%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .intro_container {
+    width: 80%;
   }
 }
 @media (max-width: 599px) {
@@ -35,6 +131,9 @@
     border-radius: 10px;
   }
   .intro_and_download {
+    width: 100%;
+  }
+  .intro_container {
     width: 100%;
   }
 }
