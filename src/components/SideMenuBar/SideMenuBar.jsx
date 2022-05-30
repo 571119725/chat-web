@@ -33,7 +33,7 @@ function SideMenuBar () {
         </NavLink>
       </div>
       <NavLink 
-        to='user_space'
+        to='personalInfor'
         title='个人空间'
         className={({isActive}) =>  styles.user_icon + " " + (isActive ? styles.active_choice:'')}>
         <div className='iconfont'>&#xe788;</div>

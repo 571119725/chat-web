@@ -4,9 +4,9 @@ import {Route, Routes, useLocation} from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ChatPageTopBar from '@/components/ChatPageTopBar/ChatPageTopBar';
 import DownloadPageTopBar from '@/components/DownloadPageTopBar/DownloadPageTopBar';
+import SettingPageTopBar from '@/components/SettingPageTopBar/SettingPageTopBar';
 function TopNavigation (props) {
   const location = useLocation();
-  const SettingPage = <div className={styles.abs_position}>SettingPage</div>;
   return (
     <div className={styles.topNavigation}>
       <TransitionGroup className={styles.router_wrapper}>
@@ -19,7 +19,7 @@ function TopNavigation (props) {
           <Routes location={location}>
             <Route path='chatPage' exact element={<ChatPageTopBar onShowDrawer={props.onShowDrawer}/>}/>
             <Route path='download' exact element={<DownloadPageTopBar onShowDrawer={props.onShowDrawer}/> }/>
-            <Route path='setting' exact element={SettingPage}/>
+            <Route path='setting' exact element={<SettingPageTopBar onShowDrawer={props.onShowDrawer} />}/>
           </Routes>
         </CSSTransition>
       </TransitionGroup>

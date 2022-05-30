@@ -1,6 +1,6 @@
 import styles from './mainContent.module.css';
 import './animation.css'
-import {ChatPage, DownloadPage, SettingPage} from '@/views/index';
+import {ChatPage, DownloadPage, SettingPage, PersonalInforPage} from '@/views/index';
 import {Route, Routes, useLocation} from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 function MainContent () {
@@ -18,6 +18,7 @@ function MainContent () {
             <Route path='chatPage' exact element={<ChatPage />}/>
             <Route path='download' exact element={<DownloadPage />}/>
             <Route path='setting' exact element={<SettingPage />}/>
+            <Route path='personalInfor' exact element={<PersonalInforPage />}/>
           </Routes>
         </CSSTransition>
       </TransitionGroup>
