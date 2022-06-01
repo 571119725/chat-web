@@ -29,3 +29,10 @@ export function evaluateMessage (infor) {
     data: infor
   })
 };
+export function getHistoryMsgSingleDay (infor) {
+  return axios({
+    method: 'get',
+    url: '/msg/history_msg_singleday',
+    params: infor
+  })
+};

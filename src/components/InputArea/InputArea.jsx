@@ -10,15 +10,13 @@ function InputArea (props) {
       content: inputContent.replace(/[\r\n]/g, ''),
       fromUserId: sessionStorage.getItem('userId'),
       toUserId: 1,
-      time: moment().format('HH:mm'),
+      reply_time: moment().format('YYYY-MM-DDTHH:mm'),
       selfuser: true
     };
     props.getInputContentInfor(temp);
     setInputContent('');
     sendMessage(temp).then(
       res => {
-        let infor = res;
-        infor.reply_time = infor.reply_time.slice(11,16);
         props.getInputContentInfor(res);
       }
     )
