@@ -13,8 +13,10 @@ function ChatPage () {
       current_day: date,
       is_today: isToday
     };
+    console.log(infor);
     getHistoryMsgSingleDay(infor).then(
       res => {
+          console.log(res);
         if(res){
           const infor = {
             content: res['content'],
@@ -28,7 +30,7 @@ function ChatPage () {
     );
   };
   const showContentInfor = (infor) => {
-    if(moment().format('YYYY-MM-DD') === dialogInfor[dialogInfor.length-1].day){
+    if(dialogInfor.length>0 && moment().format('YYYY-MM-DD') === dialogInfor[dialogInfor.length-1].day){
       dialogInfor[dialogInfor.length-1].content.push(infor);
       setDialogInfor([...dialogInfor]);
     }else {
@@ -36,7 +38,9 @@ function ChatPage () {
         day: moment().format('YYYY-MM-DD'),
         content: [infor]
       };
-      setDialogInfor(temp);
+      dialogInfor.push(temp);
+      setDialogInfor(dialogInfor);
+      console.log(dialogInfor);
     }
   };
   const chooseLevel = (id, level) => {
