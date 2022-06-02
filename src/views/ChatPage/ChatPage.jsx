@@ -2,20 +2,30 @@ import styles from './chatPage.module.css';
 import React,{useEffect, useState} from 'react';
 import InputArea from '@/components/InputArea/InputArea';
 import ChatWindow from '@/components/ChatWindow/ChatWindow';
-import {getHistory, evaluateMessage} from '@/apis';
+import {getHistoryMsgSingleDay, evaluateMessage} from '@/apis';
+import moment from 'moment';
 function ChatPage () {
   const [dialogInfor,setDialogInfor] = useState([]);
   const childRef = React.createRef();
   useEffect(
     () => {
       const infor = {
-        userid: sessionStorage.getItem('userId')
+        userid: sessionStorage.getItem('userId'),
+        current_day: moment().format('YYYY-MM-DD'),
+        is_today: 1
       };
-      getHistory(infor).then(
+      getHistoryMsgSingleDay(infor).then(
         res => {
-          // console.log(res);
+          const temp = [];
+          temp.push({date: res.day, type: -1});
+          temp.push(...res.content);
+          console.log(temp);
         }
       )
+    }
+  )
+  useEffect(
+    () => {
       childRef.current.scrollToBottom();
     },[dialogInfor,childRef]
   );

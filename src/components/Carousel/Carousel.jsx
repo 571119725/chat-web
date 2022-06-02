@@ -10,12 +10,6 @@ function Carousel () {
   ];
   const [showIndex, setShowIndex] = useState(0);
   const [timer, setTimer] = useState(null);
-  useEffect(
-    () => {
-      startCount();
-      return stopCount();
-    },[showIndex]
-  );
   const showImg = (
     <CSSTransition 
       timeout={500} 
@@ -48,7 +42,13 @@ function Carousel () {
   };
   const changeIndex =(index) => {
     setShowIndex(index);
-  }
+  };
+  useEffect(
+    () => {
+      startCount();
+      return stopCount();
+    },[showIndex]
+  );
   return (
     <div className={styles.carousel}>
       <div 

@@ -30,7 +30,7 @@ function ChatWindow (props) {
           unmountOnExit={true} 
           appear={true}
           key={id}>
-          <QuestionDialog content={element.content} time={element.time}/>
+          <QuestionDialog content={element.content} time={element.reply_time.slice(11,16)}/>
         </CSSTransition>;
     }else {
       temp = 
@@ -43,7 +43,7 @@ function ChatWindow (props) {
           <ResponseDialog 
             id={element.msgid}
             content={element.content} 
-            time={element.reply_time}
+            time={element.reply_time.slice(11,16)}
             evaluation={element.evaluation}
             onChooseLevel={props.onChooseLevel}/>
         </CSSTransition>;
