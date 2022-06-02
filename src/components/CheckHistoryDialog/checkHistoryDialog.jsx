@@ -1,7 +1,7 @@
 import styles from './checkHistoryDialog.module.css';
-function CheckHistoryDialog () {
+function CheckHistoryDialog (props) {
   return (
-    <div className={styles.check_history_dialog}>
+    <div className={styles.check_history_dialog} onClick={props.onGetHistory}>
       <span>查看历史记录</span>
     </div>
   )

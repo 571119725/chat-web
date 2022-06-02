@@ -30,8 +30,16 @@ function ChatPage () {
     },[dialogInfor,childRef]
   );
   const showContentInfor = (infor) => {
-    dialogInfor.push(infor);
-    setDialogInfor([...dialogInfor]);
+    if(moment().format('YYYY-MM-DD') === dialogInfor[dialogInfor.length-1].day){
+      dialogInfor[dialogInfor.length-1].content.push(infor);
+      setDialogInfor([...dialogInfor]);
+    }else {
+      const temp = {
+        day: moment().format('YYYY-MM-DD'),
+        content: [infor]
+      };
+      setDialogInfor(temp);
+    }
   };
   const chooseLevel = (id, level) => {
     let temp = [...dialogInfor];
@@ -46,10 +54,27 @@ function ChatPage () {
       evaluate: level
     };
     evaluateMessage(infor);
+  };
+  const getPreviousHistory = () => {
+    console.log(1111);
   }
+  useEffect(
+    () => {
+      getHistoryMsg(moment().format('YYYY-MM-DD'),1);
+    },[]
+  );
+  useEffect(
+    () => {
+      childRef.current.scrollToBottom();
+    },[dialogInfor,childRef]
+  );
   return (
     <div className={styles.chat_page}>
-      <ChatWindow converInfor={dialogInfor} onRef={childRef} onChooseLevel={(id,level) => chooseLevel(id,level)}/>
+      <ChatWindow 
+        onRef={childRef}
+        converInfor={dialogInfor}  
+        onChooseLevel={(id,level) => chooseLevel(id,level)} 
+        onGetHistory={getPreviousHistory}/>
       <InputArea getInputContentInfor={showContentInfor}/>
     </div>
   )

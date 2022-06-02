@@ -2,7 +2,6 @@
   "name": "chat-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://571119725.github.io/chat-web",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@babel/core": "^7.16.0",

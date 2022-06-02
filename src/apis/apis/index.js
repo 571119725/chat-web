@@ -35,6 +35,7 @@ export function getHistoryMsgSingleDay (infor) {
     url: '/msg/history_msg_singleday',
     params: infor
   })
+<<<<<<< HEAD
 };
 export function downloadApp () {
   return new Promise(() => {
@@ -55,3 +56,6 @@ export function downloadApp () {
     })
   })
 }
+=======
+};
+>>>>>>> 54376168632326ff2edc18e7f609fa95d1bcc232
