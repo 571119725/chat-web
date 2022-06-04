@@ -6,21 +6,24 @@ import moment from 'moment';
 function InputArea (props) {
   const [inputContent, setInputContent] = useState('');
   const pushMessage = () => {
-    const temp = {
-      content: inputContent.replace(/[\r\n]/g, ''),
-      fromUserId: sessionStorage.getItem('userId'),
-      toUserId: 1,
-      reply_time: moment().format('YYYY-MM-DDTHH:MM:SS'),
-      selfuser: true
-    };
-    props.getInputContentInfor(temp);
-    setInputContent('');
-    sendMessage(temp).then(
-      res => {
-        console.log(res);
-        props.getInputContentInfor(res);
-      }
-    )
+    if(inputContent.replace(/[\r\n]/g, '') !== ''){
+      const temp = {
+        content: inputContent.replace(/[\r\n]/g, ''),
+        fromUserId: sessionStorage.getItem('userId'),
+        toUserId: 1,
+        reply_time: moment().format('YYYY-MM-DDTHH:MM:SS'),
+        selfuser: true
+      };
+      props.getInputContentInfor(temp);
+      setInputContent('');
+      sendMessage(temp).then(
+        res => {
+          props.getInputContentInfor(res);
+        }
+      )
+    }else {
+      setInputContent('');
+    }
   };
   const MyIcon = createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_3424375_g0bod7x3bw5.js', // 在 iconfont.cn 上生成

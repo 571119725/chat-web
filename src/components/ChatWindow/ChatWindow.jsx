@@ -19,63 +19,59 @@ function ChatWindow (props) {
       left: 0,
       behavior: 'smooth'
     });
-  };
-  const Dialogs = props.converInfor.map(
-    (element, id) => {
-      let intervalContent = 
-      <TransitionGroup className={styles.router_wrapper} key={id}>
-        <CSSTransition 
-          timeout={700} 
-          classNames={'appearLTR'} 
-          unmountOnExit={true} 
-          appear={true}
-          key={element.day}>
-          <DateColumn date={element.day}/>
-        </CSSTransition>
-        {
-          element.content.map(
-            (ele,id) => {
-              let temp;
-              if (ele.selfuser) {
-                temp = 
-                  <CSSTransition 
-                    timeout={700} 
-                    classNames={'appearLTR'} 
-                    unmountOnExit={true} 
-                    appear={true}
-                    key={id}>
-                    <QuestionDialog content={ele.content} time={ele.reply_time.slice(11,16)}/>
-                  </CSSTransition>;
-              }else {
-                temp = 
-                  <CSSTransition 
-                    timeout={700} 
-                    classNames={'appearRTL'} 
-                    unmountOnExit={true} 
-                    appear={true}
-                    key={id}>
-                    <ResponseDialog 
-                      id={ele.msgid}
-                      content={ele.content} 
-                      time={ele.reply_time.slice(11,16)}
-                      evaluation={ele.evaluation}
-                      onChooseLevel={props.onChooseLevel}/>
-                  </CSSTransition>;
-              }
-              return (
-                temp
-              )
-            }
-          )
-        }
-      </TransitionGroup>
-      return intervalContent;
+  }
+  const Dialogs = props.converInfor.map( (element,id) => {
+    let temp;
+    if(element.type === -1){
+      temp = 
+      <CSSTransition 
+        timeout={700} 
+        classNames={'appearTTB'} 
+        unmountOnExit={true} 
+        appear={true}
+        key={id}>
+        <DateColumn date={element.date}/>
+      </CSSTransition>;
+    }else {
+      if (element.selfuser) {
+        temp = 
+          <CSSTransition 
+            timeout={700} 
+            classNames={'appearLTR'} 
+            unmountOnExit={true} 
+            appear={true}
+            key={id}>
+            <QuestionDialog 
+              content={element.content} 
+              time={element.reply_time.slice(11,16)}/>
+          </CSSTransition>;
+      }else {
+        temp = 
+          <CSSTransition 
+            timeout={700} 
+            classNames={'appearRTL'} 
+            unmountOnExit={true} 
+            appear={true}
+            key={id}>
+            <ResponseDialog 
+              id={element.msgid}
+              content={element.content} 
+              time={element.reply_time.slice(11,16)}
+              evaluation={element.evaluation}
+              onChooseLevel={props.onChooseLevel}/>
+          </CSSTransition>;
+      }
     }
-  );q
+    return (
+      temp
+    )
+  });
   return (
     <div className={styles.chat_window}  ref={messageEndRef}>
-      <CheckHistoryDialog />
-      {Dialogs}
+      <CheckHistoryDialog checkHistoryDialog={props.checkHistoryDialog}/>
+      <TransitionGroup className={styles.router_wrapper}>
+        {Dialogs}
+      </TransitionGroup>
     </div>
   )
 }

@@ -48,7 +48,6 @@ function ChatPage () {
       current_day: currentDay,
       is_today: 0
     };
-    console.log(infor);
     getHistoryMsgSingleDay(infor).then(
       res => {
         if(res) {
@@ -57,7 +56,6 @@ function ChatPage () {
           newData.push(...res.content);
           const temp = dialogInfor;
           temp.unshift(...newData);
-          console.log(temp);
           setDialogInfor([...temp])
           setCurrentDay(res.day);
         }
