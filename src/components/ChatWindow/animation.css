@@ -43,3 +43,26 @@
   transform: translateX(30%);
   transition: all 0.7s;
 }
+
+.appearTTB-enter {
+  opacity: 0;
+  transform: translateY(30%);
+}
+
+.appearTTB-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s;
+}
+
+.appearTTB-exit {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s;
+}
+
+.appearTTB-exit-active {
+  opacity: 0;
+  transform: translateY(30%);
+  transition: all 0.7s;
+}

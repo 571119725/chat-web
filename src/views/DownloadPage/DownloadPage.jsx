@@ -1,6 +1,11 @@
 import styles from './downloadPage.module.css';
 import Carousel from '@/components/Carousel/Carousel';
+import { downloadApp } from '../../apis/apis';
 function DownloadPage () {
+  const downloadAppFromBack = () => {
+    downloadApp();
+    console.log('downloadApp');
+  };
   return (
     <div className={styles.download_page}>
       <div className={styles.carousel_container}>
@@ -25,7 +30,7 @@ function DownloadPage () {
               <li>武汉热游信息技术有限公司</li>
             </ul>
           </div>
-          <div className={styles.download_button_container}>
+          <div className={styles.download_button_container} onClick={downloadAppFromBack}>
             <div className={styles.download_button}>DOWNLOAD</div>
           </div>
         </div>

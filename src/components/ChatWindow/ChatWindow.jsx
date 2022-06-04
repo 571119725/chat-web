@@ -71,7 +71,7 @@ function ChatWindow (props) {
       </TransitionGroup>
       return intervalContent;
     }
-  );
+  );q
   return (
     <div className={styles.chat_window}  ref={messageEndRef}>
       <CheckHistoryDialog />

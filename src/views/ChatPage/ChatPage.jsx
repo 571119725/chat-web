@@ -6,42 +6,63 @@ import {getHistoryMsgSingleDay, evaluateMessage} from '@/apis';
 import moment from 'moment';
 function ChatPage () {
   const [dialogInfor,setDialogInfor] = useState([]);
+  const [currentDay, setCurrentDay] = useState('');
+  const [inputNewMessage, setInputNewMessage] = useState(false);
   const childRef = React.createRef();
-  const getHistoryMsg = (date, isToday) => {
+  useEffect(
+    () => {
+      const infor = {
+        userid: sessionStorage.getItem('userId'),
+        current_day: moment().format('YYYY-MM-DD'),
+        is_today: 1
+      };
+      getHistoryMsgSingleDay(infor).then(
+        res => {
+          if(res) {
+            const temp = [];
+            temp.push({date: res.day, type: -1});
+            temp.push(...res.content);
+            setDialogInfor([...temp]);
+            setCurrentDay(res.day);
+          }
+        }
+      )
+    },[]
+  )
+  useEffect(
+    () => {
+      if(inputNewMessage){
+        childRef.current.scrollToBottom();
+        setInputNewMessage(false);
+      }
+    },[dialogInfor,childRef]
+  );
+  const showContentInfor = (infor) => {
+    dialogInfor.push(infor);
+    setDialogInfor([...dialogInfor]);
+    setInputNewMessage(true);
+  };
+  const checkHistoryDialog = () => {
     const infor = {
       userid: sessionStorage.getItem('userId'),
-      current_day: date,
-      is_today: isToday
+      current_day: currentDay,
+      is_today: 0
     };
     console.log(infor);
     getHistoryMsgSingleDay(infor).then(
       res => {
-          console.log(res);
-        if(res){
-          const infor = {
-            content: res['content'],
-            day: res['day']
-          };
-          let temp = [...dialogInfor];
-          temp.unshift(infor);
-          setDialogInfor(temp);
+        if(res) {
+          const newData = [];
+          newData.push({date: res.day, type: -1});
+          newData.push(...res.content);
+          const temp = dialogInfor;
+          temp.unshift(...newData);
+          console.log(temp);
+          setDialogInfor([...temp])
+          setCurrentDay(res.day);
         }
       }
-    );
-  };
-  const showContentInfor = (infor) => {
-    if(dialogInfor.length>0 && moment().format('YYYY-MM-DD') === dialogInfor[dialogInfor.length-1].day){
-      dialogInfor[dialogInfor.length-1].content.push(infor);
-      setDialogInfor([...dialogInfor]);
-    }else {
-      const temp = {
-        day: moment().format('YYYY-MM-DD'),
-        content: [infor]
-      };
-      dialogInfor.push(temp);
-      setDialogInfor(dialogInfor);
-      console.log(dialogInfor);
-    }
+    )
   };
   const chooseLevel = (id, level) => {
     let temp = [...dialogInfor];
@@ -57,26 +78,9 @@ function ChatPage () {
     };
     evaluateMessage(infor);
   };
-  const getPreviousHistory = () => {
-    console.log(1111);
-  }
-  useEffect(
-    () => {
-      getHistoryMsg(moment().format('YYYY-MM-DD'),1);
-    },[]
-  );
-  useEffect(
-    () => {
-      childRef.current.scrollToBottom();
-    },[dialogInfor,childRef]
-  );
   return (
     <div className={styles.chat_page}>
-      <ChatWindow 
-        onRef={childRef}
-        converInfor={dialogInfor}  
-        onChooseLevel={(id,level) => chooseLevel(id,level)} 
-        onGetHistory={getPreviousHistory}/>
+      <ChatWindow converInfor={dialogInfor} onRef={childRef} onChooseLevel={(id,level) => chooseLevel(id,level)} checkHistoryDialog={checkHistoryDialog}/>
       <InputArea getInputContentInfor={showContentInfor}/>
     </div>
   )

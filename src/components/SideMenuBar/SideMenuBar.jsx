@@ -15,7 +15,7 @@ function SideMenuBar () {
           title='聊天界面' 
           className={({isActive}) =>  
             styles.funct_choice + " " + 
-            styles.funct_choice_message + ' ' + 
+            // styles.funct_choice_message + ' ' + 
             (isActive ? styles.active_choice:'')}>
           <div className='iconfont'>&#xe89c;</div>
         </NavLink>

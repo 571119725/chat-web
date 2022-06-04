@@ -2,8 +2,8 @@
   width: 100%;
   text-align: center;
   font-size: 10px;
-  color: rgb(47, 47, 209);
-  margin: 5px;
+  color: rgb(80, 80, 167);
+  padding: 10px 0;
 }
 .check_history_dialog span {
   cursor: pointer;
