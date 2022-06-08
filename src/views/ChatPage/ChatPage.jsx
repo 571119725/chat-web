@@ -11,6 +11,7 @@ function ChatPage () {
   const childRef = React.createRef();
   useEffect(
     () => {
+      setCurrentDay(moment().format('YYYY-MM-DD'));
       const infor = {
         userid: sessionStorage.getItem('userId'),
         current_day: moment().format('YYYY-MM-DD'),
@@ -23,7 +24,6 @@ function ChatPage () {
             temp.push({date: res.day, type: -1});
             temp.push(...res.content);
             setDialogInfor([...temp]);
-            setCurrentDay(res.day);
           }
         }
       )
