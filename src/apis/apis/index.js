@@ -36,22 +36,31 @@ export function getHistoryMsgSingleDay (infor) {
     params: infor
   })
 };
+// export function downloadApp () {
+//   return new Promise(() => {
+//     axios({
+//       method:'get',
+//       url:'/file/download_app',
+//       responseType: 'blob'
+//     }).then(response => {
+//       let url = window.URL.createObjectURL(response)
+//       let link = document.createElement('a')
+//       link.style.display = 'none'
+//       link.href = url
+//       link.setAttribute('download', 'dianbot')
+//       document.body.appendChild(link)
+//       link.click()
+//     }).catch(error => {
+//         return error
+//     })
+//   })
+// };
 export function downloadApp () {
-  return new Promise(() => {
-    axios({
-      method:'get',
-      url:'/file/download_app',
-      responseType: 'blob'
-    }).then(response => {
-      let url = window.URL.createObjectURL(response)
-      let link = document.createElement('a')
-      link.style.display = 'none'
-      link.href = url
-      link.setAttribute('download', 'dianbot')
-      document.body.appendChild(link)
-      link.click()
-    }).catch(error => {
-        return error
-    })
-  })
-}
+  let url = 'http://49.232.174.87:9090/App/base.apk';
+  let link = document.createElement('a');
+  link.style.display = 'none';
+  link.href = url;
+  link.setAttribute('download', 'dianbot');
+  document.body.appendChild(link);
+  link.click();
+};
